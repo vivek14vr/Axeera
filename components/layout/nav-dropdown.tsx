@@ -80,10 +80,12 @@ export function NavDropdown({ item }: NavDropdownProps) {
     }
 
     const rect = trigger.getBoundingClientRect();
+    const menuWidth = menuRef.current?.offsetWidth ?? 224;
+    const maxLeft = Math.max(16, window.innerWidth - menuWidth - 16);
 
     setMenuPosition({
       top: rect.bottom + 6,
-      left: rect.left,
+      left: Math.min(rect.left, maxLeft),
     });
   };
 
@@ -141,7 +143,7 @@ export function NavDropdown({ item }: NavDropdownProps) {
     return (
       <Link
         href={item.href}
-        className="nav-link shrink-0 whitespace-nowrap text-sm font-medium text-foreground/80"
+        className="nav-link shrink-0 whitespace-nowrap text-[13px] font-medium text-foreground/80 xl:text-sm"
       >
         {item.label}
       </Link>
@@ -155,7 +157,7 @@ export function NavDropdown({ item }: NavDropdownProps) {
             ref={menuRef}
             id={menuId}
             data-open="true"
-            className="nav-dropdown-menu glass-surface-strong min-w-56 rounded-2xl p-2 shadow-brand"
+            className="nav-dropdown-menu glass-surface-strong min-w-56 rounded-2xl p-2 shadow-glass"
             style={{ top: menuPosition.top, left: menuPosition.left }}
             onMouseEnter={openMenu}
             onMouseLeave={scheduleClose}
@@ -165,7 +167,7 @@ export function NavDropdown({ item }: NavDropdownProps) {
                 <li key={child.href}>
                   <Link
                     href={child.href}
-                    className="nav-dropdown-link block rounded-2xl px-3 py-2 text-sm text-foreground/85"
+                    className="nav-dropdown-link block rounded-2xl px-3 py-2 text-sm text-foreground"
                     onClick={() => setIsOpen(false)}
                   >
                     {child.label}
@@ -189,7 +191,7 @@ export function NavDropdown({ item }: NavDropdownProps) {
       >
         <button
           type="button"
-          className="nav-link inline-flex shrink-0 items-center gap-1 whitespace-nowrap text-sm font-medium text-foreground/80"
+          className="nav-link inline-flex shrink-0 items-center gap-1 whitespace-nowrap text-[13px] font-medium text-foreground/80 xl:text-sm"
           aria-expanded={isOpen}
           aria-controls={menuId}
           aria-haspopup="menu"

@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { MouseEventHandler, ReactNode } from "react";
 
 import { routes } from "@/lib/constants/routes";
 import { cn } from "@/lib/utils/cn";
@@ -8,6 +8,7 @@ type ButtonProps = {
   className?: string;
   href?: string;
   variant?: "primary" | "secondary" | "ghost";
+  onClick?: MouseEventHandler<HTMLAnchorElement>;
 };
 
 const variantStyles = {
@@ -24,10 +25,12 @@ export function Button({
   className,
   href = routes.contact,
   variant = "primary",
+  onClick,
 }: ButtonProps) {
   return (
     <a
       href={href}
+      onClick={onClick}
       className={cn(
         "relative z-[1] inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-medium",
         variantStyles[variant],

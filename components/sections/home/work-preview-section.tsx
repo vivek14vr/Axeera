@@ -25,7 +25,7 @@ export function WorkPreviewSection() {
           </Button>
         </div>
 
-        <ScrollStaggerGroup className="mt-12 grid gap-5 lg:grid-cols-3">
+        <ScrollStaggerGroup className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {showcaseProjects.map((project) => (
             <ScrollStaggerItem key={project.name} className="h-full">
               <GlassPanel interactive className="flex h-full flex-col overflow-hidden p-0">

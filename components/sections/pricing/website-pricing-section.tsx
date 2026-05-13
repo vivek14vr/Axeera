@@ -50,7 +50,7 @@ export function WebsitePricingSection() {
             align="center"
           />
 
-          <div className="mt-12 grid grid-cols-1 items-stretch gap-5 sm:grid-cols-2 xl:grid-cols-4 xl:gap-6">
+          <div className="mt-12 grid grid-cols-1 items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-6">
             {webPricingPlans.map((plan) => (
               <GlassPanel
                 key={plan.id}

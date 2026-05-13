@@ -20,6 +20,16 @@
   --shadow-deep: rgba(31, 36, 48, 0.1);
   --grid-line: rgba(31, 36, 48, 0.08);
   --selection: rgba(124, 106, 212, 0.22);
+  --nav-panel-border: color-mix(in srgb, var(--accent) 22%, white);
+  --nav-panel-background: linear-gradient(
+    180deg,
+    color-mix(in srgb, white 82%, var(--accent) 6%) 0%,
+    color-mix(in srgb, #faf7f4 76%, var(--accent) 10%) 100%
+  );
+  --nav-panel-shadow:
+    0 10px 24px rgba(44, 37, 58, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  --nav-panel-blur: blur(24px) saturate(160%);
 }
 
 @theme inline {
@@ -216,7 +226,8 @@ a {
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .glass-nav,
   .glass-surface,
-  .glass-surface-strong {
+  .glass-surface-strong,
+  .glass-mobile-menu {
     background-color: rgba(252, 249, 246, 0.92);
     background-image: none;
   }
@@ -262,6 +273,49 @@ a {
   width: 80%;
   margin-top: 0.75rem;
   border-radius: 1.5rem;
+}
+
+.glass-mobile-menu {
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-top: 1px solid var(--nav-border);
+  border-radius: 0 0 1.5rem 1.5rem;
+}
+
+.glass-surface-strong.glass-mobile-menu {
+  overflow-y: auto;
+  border-top: 1px solid var(--nav-panel-border);
+  background: var(--nav-panel-background);
+  backdrop-filter: var(--nav-panel-blur);
+  -webkit-backdrop-filter: var(--nav-panel-blur);
+  box-shadow:
+    var(--nav-panel-shadow),
+    0 28px 72px var(--shadow-deep);
+}
+
+.glass-surface-strong.glass-mobile-menu::before,
+.glass-surface-strong.glass-mobile-menu::after {
+  content: none;
+}
+
+.glass-nav-bar[data-expanded="true"] .glass-mobile-menu {
+  border-radius: 0;
+}
+
+.glass-nav-bar[data-expanded="false"] .glass-mobile-menu {
+  border-radius: 0 0 1.5rem 1.5rem;
+}
+
+.glass-mobile-menu .mobile-menu-item {
+  background: color-mix(in srgb, white 52%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 12%, white);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+@media (min-width: 64rem) and (max-width: 79.9375rem) {
+  .glass-nav-bar[data-expanded="false"] {
+    width: 92%;
+  }
 }
 
 .glass-footer {
@@ -321,18 +375,11 @@ a {
 
 .nav-link:hover {
   color: var(--foreground);
-  border-color: color-mix(in srgb, var(--accent) 22%, white);
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.48) 0%,
-      rgba(255, 252, 247, 0.2) 100%
-    );
-  backdrop-filter: blur(24px) saturate(160%);
-  -webkit-backdrop-filter: blur(24px) saturate(160%);
-  box-shadow:
-    0 10px 24px rgba(44, 37, 58, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  border-color: var(--nav-panel-border);
+  background: var(--nav-panel-background);
+  backdrop-filter: var(--nav-panel-blur);
+  -webkit-backdrop-filter: var(--nav-panel-blur);
+  box-shadow: var(--nav-panel-shadow);
   transform: translateY(-1px);
 }
 
@@ -342,7 +389,24 @@ a {
   pointer-events: auto;
 }
 
+.glass-surface-strong.nav-dropdown-menu {
+  border: 1px solid var(--nav-panel-border);
+  background: var(--nav-panel-background);
+  backdrop-filter: var(--nav-panel-blur);
+  -webkit-backdrop-filter: var(--nav-panel-blur);
+  box-shadow:
+    var(--nav-panel-shadow),
+    0 28px 72px var(--shadow-deep);
+}
+
+.glass-surface-strong.nav-dropdown-menu::before,
+.glass-surface-strong.nav-dropdown-menu::after {
+  content: none;
+}
+
 .nav-dropdown-link {
+  border: 1px solid transparent;
+  background: transparent;
   transition:
     color 0.3s ease,
     background-color 0.3s ease,
@@ -351,12 +415,7 @@ a {
 
 .nav-dropdown-link:hover {
   color: var(--foreground);
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.48) 0%,
-      rgba(255, 252, 247, 0.2) 100%
-    );
+  background: color-mix(in srgb, white 48%, transparent);
   border: 1px solid color-mix(in srgb, var(--accent) 18%, white);
 }
 

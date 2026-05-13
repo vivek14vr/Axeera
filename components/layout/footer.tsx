@@ -40,8 +40,8 @@ export function Footer() {
   return (
     <footer className="glass-footer">
       <Container className="py-14">
-        <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-4 xl:gap-8">
-          <div className="min-w-0 md:col-span-2 xl:col-span-1">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          <div className="min-w-0 sm:col-span-2 lg:col-span-1">
             <p className="font-display text-2xl font-semibold text-foreground">
               {siteConfig.name}
             </p>

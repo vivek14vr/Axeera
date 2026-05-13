@@ -25,7 +25,7 @@ export function FeatureCardGrid({
       ? "sm:grid-cols-2"
       : columns === 3
         ? "sm:grid-cols-2 lg:grid-cols-3"
-        : "sm:grid-cols-2 xl:grid-cols-4";
+        : "sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4";
 
   return (
     <ScrollStaggerGroup className={cn("grid gap-5", gridClass, className)}>

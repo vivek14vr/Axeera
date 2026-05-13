@@ -36,7 +36,7 @@ export function SoftwareServicesSection() {
             View our work
           </Button>
         </div>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-10 grid gap-4 grid-cols-1 min-[420px]:grid-cols-2 lg:grid-cols-4">
           {softwareServicesStats.map((stat) => (
             <GlassPanel key={stat.label} interactive className="px-5 py-5">
               <p className="font-display text-3xl font-semibold text-foreground">

@@ -19,7 +19,7 @@ export function AboutIntroSection({
   stats,
 }: AboutIntroSectionProps) {
   return (
-    <ScrollSection className="py-20 sm:py-24">
+    <ScrollSection className="pb-20 pt-10 sm:pb-24 sm:pt-12">
       <Container>
         <SectionHeading
           eyebrow={eyebrow}
@@ -38,7 +38,7 @@ export function AboutIntroSection({
             sizes="(min-width: 1024px) 34vw, 100vw"
             className="lg:min-h-full"
           />
-          <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+          <div className="grid gap-4 grid-cols-1 min-[420px]:grid-cols-2 lg:grid-cols-1 xl:grid-cols-3">
             {stats.map((stat) => (
               <GlassPanel key={stat.label} interactive className="px-5 py-5 text-center">
                 <p className="font-display text-3xl font-semibold text-foreground sm:text-4xl">

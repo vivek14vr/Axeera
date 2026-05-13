@@ -11,7 +11,7 @@ import { routes } from "@/lib/constants/routes";
 
 export function PricingSection() {
   return (
-    <ScrollSection className="py-20 sm:py-24">
+    <ScrollSection className="pb-20 pt-10 sm:pb-24 sm:pt-12">
       <Container>
         <SectionHeading
           eyebrow="Pricing"
@@ -21,7 +21,7 @@ export function PricingSection() {
           titleAs="h1"
         />
 
-        <ScrollStaggerGroup className="mt-12 grid gap-5 lg:grid-cols-3">
+        <ScrollStaggerGroup className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {pricingPlans.map((plan) => (
             <ScrollStaggerItem key={plan.name}>
               <GlassPanel

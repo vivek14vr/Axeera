@@ -18,7 +18,7 @@ export function WorkSection() {
           description="A sample of the launches, redesigns, and growth programs we build for service-led companies."
         />
 
-        <ScrollStaggerGroup className="mt-12 grid gap-5 lg:grid-cols-3">
+        <ScrollStaggerGroup className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {showcaseProjects.map((project) => (
             <ScrollStaggerItem key={project.name}>
               <GlassPanel interactive className="overflow-hidden p-0">

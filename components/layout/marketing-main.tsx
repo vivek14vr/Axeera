@@ -32,7 +32,7 @@ export function MarketingMain({ children }: MarketingMainProps) {
   return (
     <main
       key={pathname}
-      className={isHome ? "flex-1" : "flex-1 pt-[calc(var(--nav-height)+1.25rem)]"}
+      className={isHome ? "flex-1" : "flex-1 pt-[calc(var(--nav-height)+0.75rem)] sm:pt-[calc(var(--nav-height)+1rem)]"}
     >
       {children}
     </main>

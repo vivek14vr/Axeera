@@ -39,7 +39,7 @@ export function HeroSection() {
               Explore services
             </Button>
           </div>
-          <div className="mt-10 grid gap-4 sm:grid-cols-3 lg:mt-auto">
+          <div className="mt-10 grid gap-4 grid-cols-1 min-[420px]:grid-cols-2 sm:grid-cols-3 lg:mt-auto">
             {heroMetrics.map((metric) => (
               <GlassPanel key={metric.label} interactive className="px-4 py-4">
                 <p className="font-display text-2xl font-semibold text-foreground">

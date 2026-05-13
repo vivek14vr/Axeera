@@ -36,7 +36,7 @@ export function SeoServicesSection() {
             Talk to an expert
           </Button>
         </div>
-        <div className="mt-10 grid gap-4 sm:grid-cols-3">
+        <div className="mt-10 grid gap-4 grid-cols-1 min-[420px]:grid-cols-2 lg:grid-cols-3">
           {seoServicesStats.map((stat) => (
             <GlassPanel key={stat.label} interactive className="px-5 py-5">
               <p className="font-display text-3xl font-semibold text-foreground">

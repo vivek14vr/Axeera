@@ -19,7 +19,7 @@ export function PortfolioSection() {
           titleAs="h1"
         />
 
-        <ScrollStaggerGroup className="mt-12 grid gap-5 lg:grid-cols-3">
+        <ScrollStaggerGroup className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {showcaseProjects.map((project) => (
             <ScrollStaggerItem key={project.name}>
               <GlassPanel interactive className="flex h-full flex-col overflow-hidden p-0">

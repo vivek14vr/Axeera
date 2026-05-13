@@ -20,7 +20,7 @@ export function TestimonialsSection() {
           align="center"
         />
 
-        <ScrollStaggerGroup className="mt-12 grid gap-5 lg:grid-cols-3">
+        <ScrollStaggerGroup className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial) => (
             <ScrollStaggerItem key={testimonial.name} className="h-full">
               <GlassPanel interactive className="flex h-full flex-col p-6">

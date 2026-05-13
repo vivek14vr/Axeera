@@ -17,7 +17,7 @@ export function ProcessSection() {
           description="Our workflow is designed for busy service teams: visible progress, thoughtful checkpoints, and no surprise scope shifts."
         />
 
-        <ScrollStaggerGroup className="mt-12 grid gap-5 lg:grid-cols-4">
+        <ScrollStaggerGroup className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {processSteps.map((step) => (
             <ScrollStaggerItem key={step.step} className="h-full">
               <GlassPanel interactive className="flex h-full flex-col p-6">

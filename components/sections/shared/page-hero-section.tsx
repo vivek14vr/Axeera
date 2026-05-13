@@ -42,7 +42,7 @@ export function PageHeroSection({
 
   if (!image) {
     return (
-      <ScrollSection className="py-20 sm:py-24">
+      <ScrollSection className="pb-20 pt-10 sm:pb-24 sm:pt-12">
         <Container>
           {heading}
           {children}
@@ -53,7 +53,7 @@ export function PageHeroSection({
 
   if (align === "center") {
     return (
-      <ScrollSection className="py-20 sm:py-24">
+      <ScrollSection className="pb-20 pt-10 sm:pb-24 sm:pt-12">
         <Container>
           {heading}
           <MediaFrame
@@ -71,7 +71,7 @@ export function PageHeroSection({
   }
 
   return (
-    <ScrollSection className="py-20 sm:py-24">
+    <ScrollSection className="pb-20 pt-10 sm:pb-24 sm:pt-12">
       <Container>
         <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div>

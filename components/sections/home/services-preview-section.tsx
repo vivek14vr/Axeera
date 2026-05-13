@@ -46,7 +46,7 @@ export function ServicesPreviewSection() {
             return (
               <ScrollStaggerItem key={service.id} className="h-full">
                 <GlassPanel as="article" interactive className="group h-full overflow-hidden p-0">
-                  <div className="grid h-full grid-cols-[minmax(9rem,10.5rem)_minmax(0,1fr)]">
+                  <div className="grid h-full grid-cols-1 sm:grid-cols-[minmax(9rem,10.5rem)_minmax(0,1fr)]">
                     {scene ? (
                       <MediaFrame
                         src={scene.src}
